@@ -1,5 +1,5 @@
 import { searchMovies } from '@/app/service/MovieService';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Header from '../components/Header';
 import { MovieCard } from '../components/MovieCard';
 interface ISearchParams {
@@ -18,17 +18,20 @@ export default async function SearchResults({ searchParams }: ISearchProps) {
 
   if (movies.length === 0) {
     return (
-      <div>
-        <div className='relative bg-gradient-to-b pb-8'>
-          <Header />
-          <main className='relative mb-48 mt-20 h-screen pl-4 lg:pl-16 '>
-            <h1 className='mb-4 text-2xl font-bold'>
-              Search results for: <span className='text-red-500'>{title}</span>
-            </h1>
-            <p className='text-xl'>No movies found</p>
-          </main>
+      <Suspense>
+        <div>
+          <div className='relative bg-gradient-to-b pb-8'>
+            <Header />
+            <main className='relative mb-48 mt-20 h-screen pl-4 lg:pl-16 '>
+              <h1 className='mb-4 text-2xl font-bold'>
+                Search results for:{' '}
+                <span className='text-red-500'>{title}</span>
+              </h1>
+              <p className='text-xl'>No movies found</p>
+            </main>
+          </div>
         </div>
-      </div>
+      </Suspense>
     );
   }
 
