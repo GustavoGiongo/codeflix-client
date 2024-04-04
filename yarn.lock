@@ -1093,6 +1093,13 @@
   resolved "https://registry.npmjs.org/@ungap/structured-clone/-/structured-clone-1.2.0.tgz"
   integrity sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==
 
+"@vidstack/react@^1.11.10":
+  version "1.11.10"
+  resolved "https://registry.yarnpkg.com/@vidstack/react/-/react-1.11.10.tgz#742ae1489ae80b4c4767e6afe8e7856289bf47b7"
+  integrity sha512-gHpu/1Et0z5JYYJYsX5PVq20gFz6BG7GbD0k9wDVxQ4DyT/wLTHLeI08NnBGClnbreyDRBoZ29iMHpo16l5sxw==
+  dependencies:
+    media-captions "^1.0.1"
+
 abab@^2.0.6:
   version "2.0.6"
   resolved "https://registry.npmjs.org/abab/-/abab-2.0.6.tgz"
@@ -3664,6 +3671,11 @@ makeerror@1.0.12:
   integrity sha512-JmqCvUhmt43madlpFzG4BQzG2Z3m6tvQDNKdClZnO3VbIudJYmxsT0FNJMeiB2+JTSlTQTSbU8QdesVmwJcmLg==
   dependencies:
     tmpl "1.0.5"
+
+media-captions@^1.0.1:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/media-captions/-/media-captions-1.0.3.tgz#e766d1e7cb7e32a2e43008541e59eab4c3580016"
+  integrity sha512-y2Qi5rqjwgH97zoko1vzu5Q6nnS0KzEQSvd4NOjnFym9JqnFb5VSsUg21RNb5cQ/nhCFJ0wz/XK+2uMwFCr6TQ==
 
 merge-stream@^2.0.0:
   version "2.0.0"
