@@ -37,6 +37,7 @@ export async function apiRequest<T>(
     if (!response.ok) {
       throw new Error(`API request failed: ${response.statusText}`);
     }
+
     return response.json();
   } catch (error) {
     throw error;

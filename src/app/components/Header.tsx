@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import { useScroll } from '../hooks/useScroll';
 import { Logo } from './Logo';
 import { NavLinks } from './NavLinks';
@@ -38,14 +38,16 @@ export default function Header() {
         </Link>
         <NavLinks />
       </div>
-      <div className='flex items-center space-x-2 md:space-x-8'>
-        <SearchForm
-          onSearch={onSearch}
-          searchTerm={searchTerm}
-          onSearchTermChange={onSearchTermChange}
-        />
-        <UserProfile />
-      </div>
+      <Suspense>
+        <div className='flex items-center space-x-2 md:space-x-8'>
+          <SearchForm
+            onSearch={onSearch}
+            searchTerm={searchTerm}
+            onSearchTermChange={onSearchTermChange}
+          />
+          <UserProfile />
+        </div>
+      </Suspense>
     </header>
   );
 }
