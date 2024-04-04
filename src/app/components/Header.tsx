@@ -27,18 +27,19 @@ export default function Header() {
   };
 
   return (
-    <header
-      className={`${isScrolled && 'bg-black'}
+    <Suspense>
+      <header
+        className={`${isScrolled && 'bg-black'}
       fixed top-0 z-50
       flex w-full items-center justify-between bg-gradient-to-t from-transparent to-black p-2 px-4 transition-all lg:px-16 lg:py-4`}
-    >
-      <div className='flex items-center space-x-2 md:space-x-8'>
-        <Link href='/'>
-          <Logo />
-        </Link>
-        <NavLinks />
-      </div>
-      <Suspense>
+      >
+        <div className='flex items-center space-x-2 md:space-x-8'>
+          <Link href='/'>
+            <Logo />
+          </Link>
+          <NavLinks />
+        </div>
+
         <div className='flex items-center space-x-2 md:space-x-8'>
           <SearchForm
             onSearch={onSearch}
@@ -47,7 +48,7 @@ export default function Header() {
           />
           <UserProfile />
         </div>
-      </Suspense>
-    </header>
+      </header>
+    </Suspense>
   );
 }

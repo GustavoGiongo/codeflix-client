@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Banner } from './components/Banner';
 import Header from './components/Header';
 import { MovieRow } from './components/MovieRow';
@@ -14,18 +15,20 @@ export default async function Home() {
     })
   );
   return (
-    <div className='relative bg-gradient-to-b pb-8'>
-      <Header />
-      <main className='relative overflow-y-scroll p-8 pb-20 scrollbar-hide lg:px-16 '>
-        <Banner movie={featuredMovie} />
-        {movies.map((movie) => (
-          <MovieRow
-            movies={movie.movies}
-            key={movie.sectionTitle}
-            sectionTitle={movie.sectionTitle}
-          />
-        ))}
-      </main>
-    </div>
+    <Suspense>
+      <div className='relative bg-gradient-to-b pb-8'>
+        <Header />
+        <main className='relative overflow-y-scroll p-8 pb-20 scrollbar-hide lg:px-16 '>
+          <Banner movie={featuredMovie} />
+          {movies.map((movie) => (
+            <MovieRow
+              movies={movie.movies}
+              key={movie.sectionTitle}
+              sectionTitle={movie.sectionTitle}
+            />
+          ))}
+        </main>
+      </div>
+    </Suspense>
   );
 }
